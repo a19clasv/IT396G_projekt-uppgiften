@@ -44,4 +44,10 @@ public class Dish {
     public void setTip(int tip) {
         this.tip = tip;
     }
+
+    public String info(){
+        String tmp=new String();
+        tmp ="ID: " + getID() + ". Login: " + getLogin() + ". Name: " + getName() + ". Cost: " + getCost() + ". Course: " + getCourse() + "Tip" + getTip();
+        return  tmp;
+    }
 }
