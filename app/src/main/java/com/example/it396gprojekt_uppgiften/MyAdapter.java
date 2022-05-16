@@ -11,26 +11,25 @@ import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
-    private ArrayList<Dish> dishes;
+    private ArrayList<MenuItem> menuItems;
 
-    public  MyAdapter(ArrayList<Dish> dishes){
-        this.dishes = dishes;
+    public  MyAdapter(ArrayList<MenuItem> menuItems){
+        this.menuItems = menuItems;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_dish, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_menu_item, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
     }
 
     @Override
     public int getItemCount() {
-        return dishes.size();
+        return menuItems.size();
     }
 }
