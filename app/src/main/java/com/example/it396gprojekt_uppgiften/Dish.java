@@ -4,13 +4,13 @@ public class Dish {
     private Long ID;
     private String login;
     private String name;
-    private String cost;
+    private int cost;
     private String course;
     private String restaurant;
     private String location;
     private int tip;
 
-    public Dish(Long ID, String login, String name, String cost, String course, String restaurant, String location, int tip) {
+    public Dish(Long ID, String login, String name, int cost, String course, String restaurant, String location, int tip) {
         this.ID = ID;
         this.login = login;
         this.name = name;
@@ -33,7 +33,7 @@ public class Dish {
         return name;
     }
 
-    public String getCost() {
+    public int getCost() {
         return cost;
     }
 
