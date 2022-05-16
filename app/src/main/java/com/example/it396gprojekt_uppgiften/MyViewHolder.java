@@ -8,12 +8,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MyViewHolder extends RecyclerView.ViewHolder {
-    public TextView textView;
-    public EditText editText;
+    public TextView nameTextView, costTextView, restaurantTextView;
 
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
-        textView = itemView.findViewById(R.id.dish_TextView);
-        editText = itemView.findViewById(R.id.dish_EditText);
+        nameTextView = itemView.findViewById(R.id.name_TextView);
+        costTextView = itemView.findViewById(R.id.cost_TextView);
+        restaurantTextView = itemView.findViewById(R.id.restaurant_TextView);
     }
 }
