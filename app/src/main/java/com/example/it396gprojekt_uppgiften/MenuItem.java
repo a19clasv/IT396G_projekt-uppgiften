@@ -34,10 +34,4 @@ public class MenuItem {
     public String getRestaurant() {
         return restaurant;
     }
-
-    public String info(){
-        String tmp=new String();
-        tmp ="ID: " + getID() + ". Login: " + getLogin() + ". Name: " + getName() + ". Cost: " + getCost() + ". Restaurant" + getRestaurant();
-        return  tmp;
-    }
 }
