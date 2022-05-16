@@ -37,7 +37,7 @@ public class Dish {
 
     public String info(){
         String tmp=new String();
-        tmp ="ID: " + getID() + ". Login: " + getLogin() + ". Name: " + getName() + ". Cost: " + getCost() + "Restaurant" + getRestaurant();
+        tmp ="ID: " + getID() + ". Login: " + getLogin() + ". Name: " + getName() + ". Cost: " + getCost() + ". Restaurant" + getRestaurant();
         return  tmp;
     }
 }
