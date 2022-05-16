@@ -26,9 +26,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.textView.setText(dishes.get(position).info());
 
-        holder.editText.setText("Input manual tip");
     }
 
     @Override
