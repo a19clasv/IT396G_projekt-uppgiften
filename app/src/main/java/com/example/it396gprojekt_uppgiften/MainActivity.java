@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
@@ -33,9 +36,20 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
                 startActivity(intent);
             }
         });
+
+        recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        new JsonTask(this).execute(JSON_URL);
     }
 
     @Override
     public void onPostExecute(String json) {
+        Gson gson = new Gson();
+
+        Type type = new TypeToken<ArrayList<MenuItem>>() {}.getType();
+        menuItems = gson.fromJson(json, type);
+        adapter = new MyAdapter(menuItems);
+        recyclerView.setAdapter(adapter);
     }
 }
