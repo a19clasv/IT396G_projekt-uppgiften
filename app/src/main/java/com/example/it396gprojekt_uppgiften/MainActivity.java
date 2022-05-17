@@ -7,10 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button aboutButton;
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=a19clasv";
+    private ArrayList<MenuItem> menuItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
