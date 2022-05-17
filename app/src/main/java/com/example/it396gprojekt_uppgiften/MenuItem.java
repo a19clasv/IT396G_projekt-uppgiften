@@ -1,13 +1,13 @@
 package com.example.it396gprojekt_uppgiften;
 
 public class MenuItem {
-    private Long ID;
+    private String ID;
     private String login;
     private String name;
     private int cost;
     private String restaurant;
 
-    public MenuItem(Long ID, String login, String name, int cost, String restaurant) {
+    public MenuItem(String ID, String login, String name, int cost, String restaurant) {
         this.ID = ID;
         this.login = login;
         this.name = name;
@@ -15,7 +15,7 @@ public class MenuItem {
         this.restaurant = restaurant;
     }
 
-    public Long getID() {
+    public String getID() {
         return ID;
     }
 
