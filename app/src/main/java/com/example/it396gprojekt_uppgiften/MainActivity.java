@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     private Button aboutButton;
+    private final String JSON_URL = "https://mobprog.webug.se/json-api?login=a19clasv";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
