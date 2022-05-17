@@ -1,6 +1,7 @@
 package com.example.it396gprojekt_uppgiften;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     private Button aboutButton;
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=a19clasv";
     private ArrayList<MenuItem> menuItems;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
