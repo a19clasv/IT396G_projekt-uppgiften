@@ -5,14 +5,14 @@ public class MenuItem {
     private String login;
     private String name;
     private int cost;
-    private String restaurant;
+    private String company;
 
-    public MenuItem(String ID, String login, String name, int cost, String restaurant) {
+    public MenuItem(String ID, String login, String name, int cost, String company) {
         this.ID = ID;
         this.login = login;
         this.name = name;
         this.cost = cost;
-        this.restaurant = restaurant;
+        this.company = company;
     }
 
     public String getID() {
@@ -31,7 +31,7 @@ public class MenuItem {
         return cost;
     }
 
-    public String getRestaurant() {
-        return restaurant;
+    public String getCompany() {
+        return company;
     }
 }
