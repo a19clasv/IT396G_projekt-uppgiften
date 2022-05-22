@@ -12,9 +12,11 @@ import java.util.ArrayList;
 public class DetailAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     private ArrayList<MenuItem> menuItems;
+    private String ID;
 
-    public  DetailAdapter(ArrayList<MenuItem> menuItems){
+    public  DetailAdapter(ArrayList<MenuItem> menuItems, String ID){
         this.menuItems = menuItems;
+        this.ID = ID;
     }
 
     @NonNull
@@ -26,9 +28,11 @@ public class DetailAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.nameTextView.setText("Name: " + menuItems.get(position).getName());
-        holder.costTextView.setText("Cost: " + menuItems.get(position).getCost() + " kr");
-        holder.restaurantTextView.setText("Restaurant: " + menuItems.get(position).getCompany());
+        if(menuItems.get(position).getID() == ID){
+            holder.nameTextView.setText("Name: " + menuItems.get(position).getName());
+            holder.costTextView.setText("Cost: " + menuItems.get(position).getCost() + " kr");
+            holder.restaurantTextView.setText("Restaurant: " + menuItems.get(position).getCompany());
+        }
     }
 
     @Override
