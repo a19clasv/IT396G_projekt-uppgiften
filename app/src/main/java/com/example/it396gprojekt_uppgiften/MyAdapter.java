@@ -1,5 +1,7 @@
 package com.example.it396gprojekt_uppgiften;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +14,11 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     private ArrayList<MenuItem> menuItems;
+    private Context context;
 
-    public  MyAdapter(ArrayList<MenuItem> menuItems){
+    public  MyAdapter(ArrayList<MenuItem> menuItems, Context context){
         this.menuItems = menuItems;
+        this.context = context;
     }
 
     @NonNull
@@ -27,8 +31,29 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.nameTextView.setText("Name: " + menuItems.get(position).getName());
+        holder.nameTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DetailActivity.class);
+                context.startActivity(intent);
+            }
+        });
         holder.costTextView.setText("Cost: " + menuItems.get(position).getCost() + " kr");
+        holder.costTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DetailActivity.class);
+                context.startActivity(intent);
+            }
+        });
         holder.restaurantTextView.setText("Restaurant: " + menuItems.get(position).getCompany());
+        holder.restaurantTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DetailActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

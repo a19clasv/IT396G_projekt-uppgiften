@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
         Type type = new TypeToken<ArrayList<MenuItem>>() {}.getType();
         menuItems = gson.fromJson(json, type);
-        adapter = new MyAdapter(menuItems);
+        adapter = new MyAdapter(menuItems, MainActivity.this);
         recyclerView.setAdapter(adapter);
     }
 }
