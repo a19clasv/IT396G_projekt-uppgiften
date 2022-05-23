@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
 
-    private Button aboutButton;
+    private Button aboutButton, searchButton;
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=a19clasv";
     private ArrayList<MenuItem> menuItems;
     private RecyclerView.Adapter adapter;
@@ -33,6 +33,15 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        searchButton = findViewById(R.id.search_button);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
                 startActivity(intent);
             }
         });
