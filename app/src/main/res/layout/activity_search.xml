@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="50dp"
-        android:text="<"
+        android:text="&lt;"
         app:layout_constraintStart_toEndOf="@+id/cost_TextView"
         app:layout_constraintTop_toBottomOf="@+id/restaurant_TextView" />
 
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="50dp"
-        android:text="<="
+        android:text="&lt;="
         app:layout_constraintStart_toEndOf="@+id/less_than_Button"
         app:layout_constraintTop_toBottomOf="@+id/restaurant_TextView" />
 
@@ -98,7 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="50dp"
-        android:text="=>"
+        android:text="&gt;"
         app:layout_constraintStart_toEndOf="@+id/greater_than_or_equal_Button"
         app:layout_constraintTop_toBottomOf="@+id/restaurant_TextView" />
 
