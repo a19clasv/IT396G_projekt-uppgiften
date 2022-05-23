@@ -28,7 +28,7 @@ public class DetailAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        if(menuItems.get(position).getID() == ID){
+        if(menuItems.get(position).getID().contains(ID)) {
             holder.nameTextView.setText("Name: " + menuItems.get(position).getName());
             holder.costTextView.setText("Cost: " + menuItems.get(position).getCost() + " kr");
             holder.restaurantTextView.setText("Restaurant: " + menuItems.get(position).getCompany());

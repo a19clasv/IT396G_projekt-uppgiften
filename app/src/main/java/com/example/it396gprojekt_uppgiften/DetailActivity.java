@@ -21,6 +21,7 @@ public class DetailActivity extends AppCompatActivity implements JsonTask.JsonTa
     private ArrayList<MenuItem> menuItems;
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerView;
+    private String ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,7 @@ public class DetailActivity extends AppCompatActivity implements JsonTask.JsonTa
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            String name = extras.getString("ID");
+            ID = extras.getString("ID");
         }
 
         backButton = findViewById(R.id.back_button);
@@ -52,7 +53,7 @@ public class DetailActivity extends AppCompatActivity implements JsonTask.JsonTa
 
         Type type = new TypeToken<ArrayList<MenuItem>>() {}.getType();
         menuItems = gson.fromJson(json, type);
-        adapter = new MyAdapter(menuItems, DetailActivity.this);
+        adapter = new DetailAdapter(menuItems, ID);
         recyclerView.setAdapter(adapter);
     }
 }
