@@ -15,10 +15,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     private ArrayList<MenuItem> menuItems;
     private Context context;
+    private String nameFilter, restaurantFilter, costFilter, costSignFilter;
 
-    public  MyAdapter(ArrayList<MenuItem> menuItems, Context context){
+    public MyAdapter(ArrayList<MenuItem> menuItems, Context context, String nameFilter, String restaurantFilter, String costFilter, String costSignFilter) {
         this.menuItems = menuItems;
         this.context = context;
+        this.nameFilter = nameFilter;
+        this.restaurantFilter = restaurantFilter;
+        this.costFilter = costFilter;
+        this.costSignFilter = costSignFilter;
     }
 
     @NonNull

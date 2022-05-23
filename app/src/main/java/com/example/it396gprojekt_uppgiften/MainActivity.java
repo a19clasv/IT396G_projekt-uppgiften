@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerView;
     private SharedPreferences preferences;
+    private String name = "", restaurant = "", cost = "", costSign = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
         Type type = new TypeToken<ArrayList<MenuItem>>() {}.getType();
         menuItems = gson.fromJson(json, type);
-        adapter = new MyAdapter(menuItems, MainActivity.this);
+        adapter = new MyAdapter(menuItems, MainActivity.this, name, restaurant, cost, costSign);
         recyclerView.setAdapter(adapter);
     }
 
@@ -70,9 +71,9 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     protected void onResume() {
         super.onResume();
 
-        String name = preferences.getString("name", "");
-        String restaurant = preferences.getString("restaurant", "");
-        String cost = preferences.getString("cost", "");
-        String costSign = preferences.getString("costSign", "");
+        name = preferences.getString("name", "");
+        restaurant = preferences.getString("restaurant", "");
+        cost = preferences.getString("cost", "");
+        costSign = preferences.getString("costSign", "");
     }
 }
