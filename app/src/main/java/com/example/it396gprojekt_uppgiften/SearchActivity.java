@@ -32,7 +32,7 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         lessThanOrEqual = findViewById(R.id.less_than_or_equal_Button);
-        lessThan.setOnClickListener(new View.OnClickListener() {
+        lessThanOrEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 costSign = "<=";
@@ -40,7 +40,7 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         equal = findViewById(R.id.equal_Button);
-        lessThan.setOnClickListener(new View.OnClickListener() {
+        equal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 costSign = "=";
@@ -48,7 +48,7 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         greaterThanOrEqual = findViewById(R.id.greater_than_or_equal_Button);
-        lessThan.setOnClickListener(new View.OnClickListener() {
+        greaterThanOrEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 costSign = "=>";
@@ -56,7 +56,7 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         greaterThan = findViewById(R.id.greater_than_Button);
-        lessThan.setOnClickListener(new View.OnClickListener() {
+        greaterThan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 costSign = ">";
