@@ -39,15 +39,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
                 context.startActivity(intent);
             }
         });
-        holder.costTextView.setText("Cost: " + menuItems.get(position).getCost() + " kr");
-        holder.costTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, DetailActivity.class);
-                intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
-                context.startActivity(intent);
-            }
-        });
         holder.restaurantTextView.setText("Restaurant: " + menuItems.get(position).getCompany());
         holder.restaurantTextView.setOnClickListener(new View.OnClickListener() {
             @Override
