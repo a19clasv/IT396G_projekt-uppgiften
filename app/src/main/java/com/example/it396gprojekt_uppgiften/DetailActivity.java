@@ -15,6 +15,11 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String name = extras.getString("ID");
+        }
+
         backButton = findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

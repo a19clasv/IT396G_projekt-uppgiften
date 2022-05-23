@@ -4,9 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Claes/AndroidStudioProjects/IT396Gprojektuppgiften/app/src/main/res/layout/activity_about.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Claes/AndroidStudioProjects/IT396Gprojektuppgiften/app/src/main/res/layout/activity_detail.xml" value="0.1" />
         <entry key="..\:/Users/Claes/AndroidStudioProjects/IT396Gprojektuppgiften/app/src/main/res/layout/activity_main.xml" value="0.18432971014492755" />
         <entry key="..\:/Users/Claes/AndroidStudioProjects/IT396Gprojektuppgiften/app/src/main/res/layout/item_dish.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/Claes/AndroidStudioProjects/IT396Gprojektuppgiften/app/src/main/res/layout/item_menu_item.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Claes/AndroidStudioProjects/IT396Gprojektuppgiften/app/src/main/res/layout/item_menu_item.xml" value="0.25" />
       </map>
     </option>
   </component>

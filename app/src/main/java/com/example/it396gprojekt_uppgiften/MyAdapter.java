@@ -35,6 +35,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
                 context.startActivity(intent);
             }
         });
@@ -43,6 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
                 context.startActivity(intent);
             }
         });
@@ -51,6 +53,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
                 context.startActivity(intent);
             }
         });
