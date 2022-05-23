@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -67,22 +68,26 @@ public class SearchActivity extends AppCompatActivity {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d("Continuing", "onClick: ");
                 name = findViewById(R.id.name_EditText);
+                Log.d("Continuing", "onClick: ");
                 String nameText = name.getText().toString();
+                Log.d("Continuing", "onClick: ");
                 editor.putString("name", nameText);
+                Log.d("Continuing", "onClick: ");
 
                 restaurant = findViewById(R.id.restaurant_EditText);
-                String restaurantText = name.getText().toString();
+                Log.d("Continuing", "onClick: ");
+                String restaurantText = restaurant.getText().toString();
                 editor.putString("restaurant", restaurantText);
 
                 cost = findViewById(R.id.cost_EditText);
-                int costValue = Integer.parseInt(name.getText().toString());
+                int costValue = Integer.parseInt(cost.getText().toString());
                 editor.putInt("cost", costValue);
 
                 editor.putString("costSign", costSign);
 
                 editor.apply();
-                finish();
             }
         });
     }
