@@ -53,8 +53,6 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        new JsonTask(this).execute(JSON_URL);
     }
 
     @Override
@@ -75,5 +73,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         restaurant = preferences.getString("restaurant", "");
         cost = preferences.getString("cost", "");
         costSign = preferences.getString("costSign", "");
+
+        new JsonTask(this).execute(JSON_URL);
     }
 }
