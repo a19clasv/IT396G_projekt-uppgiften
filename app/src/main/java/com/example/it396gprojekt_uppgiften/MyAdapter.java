@@ -35,24 +35,161 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.nameTextView.setText("Name: " + menuItems.get(position).getName());
-        holder.nameTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, DetailActivity.class);
-                intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
-                context.startActivity(intent);
+        if ((nameFilter.equals("") || nameFilter.equals(menuItems.get(position).getName())) && (restaurantFilter.equals("") || restaurantFilter.equals(menuItems.get(position).getCompany()))){
+            if (!costFilter.equals("")){
+                try{
+                    int cost = Integer.parseInt(costFilter);
+                    if (costSignFilter.equals("<")){
+                        if (cost > menuItems.get(position).getCost()){
+                            holder.nameTextView.setText("Name: " + menuItems.get(position).getName());
+                            holder.nameTextView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(context, DetailActivity.class);
+                                    intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
+                                    context.startActivity(intent);
+                                }
+                            });
+                            holder.restaurantTextView.setText("Restaurant: " + menuItems.get(position).getCompany());
+                            holder.restaurantTextView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(context, DetailActivity.class);
+                                    intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
+                                    context.startActivity(intent);
+                                }
+                            });
+                        }
+                    }
+                    else if (costSignFilter.equals("<=")){
+                        if (cost >= menuItems.get(position).getCost()){
+                            holder.nameTextView.setText("Name: " + menuItems.get(position).getName());
+                            holder.nameTextView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(context, DetailActivity.class);
+                                    intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
+                                    context.startActivity(intent);
+                                }
+                            });
+                            holder.restaurantTextView.setText("Restaurant: " + menuItems.get(position).getCompany());
+                            holder.restaurantTextView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(context, DetailActivity.class);
+                                    intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
+                                    context.startActivity(intent);
+                                }
+                            });
+                        }
+                    }
+                    else if (costSignFilter.equals("=")){
+                        if (cost == menuItems.get(position).getCost()){
+                            holder.nameTextView.setText("Name: " + menuItems.get(position).getName());
+                            holder.nameTextView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(context, DetailActivity.class);
+                                    intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
+                                    context.startActivity(intent);
+                                }
+                            });
+                            holder.restaurantTextView.setText("Restaurant: " + menuItems.get(position).getCompany());
+                            holder.restaurantTextView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(context, DetailActivity.class);
+                                    intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
+                                    context.startActivity(intent);
+                                }
+                            });
+                        }
+                    }
+                    else if (costSignFilter.equals("=>")){
+                        if (cost <= menuItems.get(position).getCost()){
+                            holder.nameTextView.setText("Name: " + menuItems.get(position).getName());
+                            holder.nameTextView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(context, DetailActivity.class);
+                                    intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
+                                    context.startActivity(intent);
+                                }
+                            });
+                            holder.restaurantTextView.setText("Restaurant: " + menuItems.get(position).getCompany());
+                            holder.restaurantTextView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(context, DetailActivity.class);
+                                    intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
+                                    context.startActivity(intent);
+                                }
+                            });
+                        }
+                    }
+                    else if (costSignFilter.equals(">")){
+                        if (cost < menuItems.get(position).getCost()){
+                            holder.nameTextView.setText("Name: " + menuItems.get(position).getName());
+                            holder.nameTextView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(context, DetailActivity.class);
+                                    intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
+                                    context.startActivity(intent);
+                                }
+                            });
+                            holder.restaurantTextView.setText("Restaurant: " + menuItems.get(position).getCompany());
+                            holder.restaurantTextView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(context, DetailActivity.class);
+                                    intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
+                                    context.startActivity(intent);
+                                }
+                            });
+                        }
+                    }
+                }catch(Exception e){
+                    holder.nameTextView.setText("Name: " + menuItems.get(position).getName());
+                    holder.nameTextView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(context, DetailActivity.class);
+                            intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
+                            context.startActivity(intent);
+                        }
+                    });
+                    holder.restaurantTextView.setText("Restaurant: " + menuItems.get(position).getCompany());
+                    holder.restaurantTextView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(context, DetailActivity.class);
+                            intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
+                            context.startActivity(intent);
+                        }
+                    });
+                }
+            }else {
+                holder.nameTextView.setText("Name: " + menuItems.get(position).getName());
+                holder.nameTextView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(context, DetailActivity.class);
+                        intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
+                        context.startActivity(intent);
+                    }
+                });
+                holder.restaurantTextView.setText("Restaurant: " + menuItems.get(position).getCompany());
+                holder.restaurantTextView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(context, DetailActivity.class);
+                        intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
+                        context.startActivity(intent);
+                    }
+                });
             }
-        });
-        holder.restaurantTextView.setText("Restaurant: " + menuItems.get(position).getCompany());
-        holder.restaurantTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, DetailActivity.class);
-                intent.putExtra("ID", menuItems.get(holder.getAdapterPosition()).getID());
-                context.startActivity(intent);
-            }
-        });
+        }
     }
 
     @Override
